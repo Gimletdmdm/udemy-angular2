@@ -1,6 +1,10 @@
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
+import { MaterialModule } from '../material/material.module';
+import { NgxTranslateModule } from '../ngx-translate/ngx-translate.module';
 import {
     ProductListingPageComponent
 } from './components/product-listing-page/product-listing-page.component';
@@ -19,13 +23,22 @@ import {
   declarations: [],
   imports: [
     CommonModule,
+    HttpClientModule,
+    NgxTranslateModule,
+    MaterialModule,
+    ReactiveFormsModule,
     ProductListingPageComponent,
     ProductRegisteringPageComponent,
     PurchaseHistoryListingPageComponent,
     SignInPageComponent,
-    StockRegisteringPageComponent
+    StockRegisteringPageComponent,
   ],
   exports: [
+    CommonModule,
+    HttpClientModule,
+    NgxTranslateModule,
+    MaterialModule,
+    ReactiveFormsModule,
     ProductListingPageComponent,
     ProductRegisteringPageComponent,
     PurchaseHistoryListingPageComponent,

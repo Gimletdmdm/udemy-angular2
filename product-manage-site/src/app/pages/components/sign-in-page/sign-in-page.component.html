@@ -1,1 +1,28 @@
-<p>sign-in-page works!</p>
+<section class="sign-in-page-wrapper">
+    <div class="sign-in-page">
+        <div class="sign-in-title-wrapper">
+            <p>EXAMPLE SITE</p>
+        </div>
+        <div class="sign-in-criteria-wrapper">
+            <form [formGroup]="signInForm">
+                <mat-form-field class="form-field" hideRequiredMarker>
+                    <input matInput formControlName="signInUserAccount" 
+                    id="signin-user-account" type="text" placeholder="{{'signInPage.userAccount' | translate}}">
+                    <mat-error class="validation-error" *ngIf="signInUserAccount.hasError('required')">
+                        {{'validationError.required' | translate}}
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="form-field" hideRequiredMarker>
+                    <input matInput [formControl]="signInUserPassword" 
+                    id="signin-user-password" type="password" placeholder="{{'signInPage.userPassword' | translate}}">
+                    <mat-error class="validation-error" *ngIf="signInUserPassword.hasError('required')">
+                        {{'validationError.required' | translate}}
+                    </mat-error>
+                </mat-form-field>
+            </form>
+            <button mat-flat-button id="sign-in-button" class="flat-button" type="button" [disabled]="!signInForm.valid">
+                {{'signInPage.signInButton' | translate}}
+            </button>
+        </div>
+    </div>
+</section>
